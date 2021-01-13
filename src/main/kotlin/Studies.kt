@@ -352,7 +352,7 @@ fun forever(): Nothing {
 
         genericCalc(::divide, 3, 2)
         genericCalc(::multiply, 3, 2)
- */
+
     var errorCode = 0
     //NULL
 
@@ -373,6 +373,36 @@ fun forever(): Nothing {
 
 //        text = null
     println(text?.length ?: 0)
+
+ */
+    val numberInt = intArrayOf(1, 2, 3)
+    var texts = listOf("Hello ", "Kotlin", "!")
+    println(texts[1])
+
+    val names = mutableListOf<String>()
+    names.add("Hello")
+    names.add("Kotlin")
+    names.add("!")
+    println(names)
+
+    names += "item"
+    names.isEmpty()
+    names.min()
+    names.last()
+    names.first()
+    names.slice(0..2).contains("Java")
+    names.remove("!")
+    names.sort()
+    println(names)
+
+    for((index, name) in names.withIndex()) {
+        println("$index, $name")
+    }
+
+    var listOfNullables: List<Int?> = listOf(1, 2, null, 4)
+    var listOfNullables: List<Int>? = null
+
+
 
 
 
