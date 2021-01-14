@@ -374,7 +374,6 @@ fun forever(): Nothing {
 //        text = null
     println(text?.length ?: 0)
 
- */
     val numberInt = intArrayOf(1, 2, 3)
     var texts = listOf("Hello ", "Kotlin", "!")
     println(texts[1])
@@ -401,6 +400,7 @@ fun forever(): Nothing {
 
     var listOfNullables: List<Int?> = listOf(1, 2, null, 4)
     var listOfNullables: List<Int>? = null
+ */
 
 
 
