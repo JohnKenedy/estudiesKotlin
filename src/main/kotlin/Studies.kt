@@ -8,6 +8,7 @@ fun forever(): Nothing {
         Thread.sleep(1000)
         println("Hello")
     }
+}
 
 // basic operators
 /*        println("Hello Kotlin")
@@ -400,14 +401,129 @@ fun forever(): Nothing {
 
     var listOfNullables: List<Int?> = listOf(1, 2, null, 4)
     var listOfNullables: List<Int>? = null
- */
 
+    //Sets
+    val othersNames = setOf("John", "Tiago", "Mateus", "John")
+    othersNames
 
+    val array = arrayOf(1, 2, 3, 4, 3)
+    val fromArray = mutableSetOf(*array)
 
+    fromArray.contains(3)
+    2 in fromArray
 
+    fromArray.add(5)
+    fromArray.remove(2)
+    fromArray
 
+    //Lambdas
+    //var calculatorLambda: (Int, Int) -> Int
+    var calculatorLambda = { a: Int, b:Int -> Int
+        a + b
+    }
 
+    println(calculatorLambda(2, 2))
 
+    val square: (Int) -> Int ={
+        it * it
+    }
 
+    println(square(8))
 
-}
+    fun lambdaCalc(x: Int, y: Int, function: (Int, Int) -> Int) {
+        println(function(x, y))
+    }
+
+    lambdaCalc(2, 3) { x, y ->
+        x * y
+    }
+
+    lambdaCalc(2, 3, Int::plus)
+
+    val lambda: () -> Unit = {
+        println("Hello Lambda")
+    }
+
+    lambda()
+
+    var texts = setOf ("IceCream", "Armadillo", "House", "John")
+
+    println(texts.sorted())
+    println(texts.sortedWith(compareBy {
+        it.length
+    }))
+
+    array.forEach {
+        println(it * it)
+    }
+
+    println(array.filter {
+        it > 2
+    })
+
+    println(array.map {
+        it * 0.8
+    })
+
+    println(array.reduce { a, b ->
+        a + b
+    })
+
+    println(array.fold(5) { a, b ->
+        a + b
+    })
+
+      //Class
+        class User(var name: String, var lastName: String, var password: String) {
+            val fullName
+                get() = "$name $lastName"
+        }
+
+        val john = User("John", "Kenedy","abc")
+        val john2 = john
+
+        john.password = "123"
+
+        println(john2.password)
+        println(john.fullName)
+
+        //same object?
+        println(john === john2)
+
+        //DataClass
+        data class Product(var name: String, var price: Double) {
+//            override fun equals(other: Any?): Boolean {
+//                if (this  === other)
+//                    return true
+//                if (other == null)
+//                    return false
+//
+//                if (javaClass != other.javaClass)
+//                    return false
+//
+//                val obg = other as Product
+//
+//                if (name != obg.name)
+//                    return false
+//
+//                if (price != obg.price)
+//                return false
+//
+//                return true
+//            }
+//
+//            override fun toString(): String {
+//                return "Product id (name: $name, price: $price)"
+//            }
+        }
+
+        var iPhone = Product("iPhone", 2000.0)
+        var iPhone2 = Product("iPhone", 2000.0)
+        println(iPhone)
+        println(iPhone == iPhone2)
+
+        val (name, price) = iPhone
+        println(name)
+        println(price)
+
+*/
